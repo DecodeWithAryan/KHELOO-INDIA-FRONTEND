@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Ticket - OSN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <nav class="bg-blue-700 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">🏆KHELOO INDIA🏆</h1>
+    <div>
+      <a href="index.html" class="px-3 hover:underline">Home</a>
+      <a href="matches.html" class="px-3 hover:underline">Matches</a>
+      <a href="news.html" class="px-3 hover:underline">News</a>
+      <a href="ticket.html" class="px-3 hover:underline">Tickets</a>
+    </div>
+  </nav>
+
+  <section class="max-w-md mx-auto mt-10 bg-white p-6 shadow-md rounded-lg">
+    <h2 class="text-2xl font-bold text-blue-700 text-center mb-4">Book Your Ticket 🎟️</h2>
+    <form id="ticketForm" class="space-y-4">
+      <input type="text" placeholder="Your Name" required class="border border-gray-300 w-full p-2 rounded">
+      <input type="email" placeholder="Your Email" required class="border border-gray-300 w-full p-2 rounded">
+      <select class="border border-gray-300 w-full p-2 rounded">
+        <option>India vs Australia</option>
+        <option>England vs Pakistan</option>
+        <option>Brazil vs Argentina</option>
+      </select>
+      <input type="number" placeholder="Number of Tickets" min="1" required class="border border-gray-300 w-full p-2 rounded">
+      <button class="bg-green-600 text-white px-4 py-2 rounded w-full hover:bg-green-700">Book Now</button>
+    </form>
+    <p id="message" class="text-center mt-4 text-blue-600 font-semibold"></p>
+  </section>
+
+  <script>
+    const form = document.getElementById('ticketForm');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      document.getElementById('message').innerText = '✅ Ticket booked successfully!';
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

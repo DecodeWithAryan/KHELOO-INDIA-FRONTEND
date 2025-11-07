@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upcoming Matches - OSN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-700 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">🏆KHELOO INDIA🏆</h1>
+    <div>
+      <a href="index.html" class="px-3 hover:underline">Home</a>
+      <a href="matches.html" class="px-3 hover:underline">Matches</a>
+      <a href="news.html" class="px-3 hover:underline">News</a>
+      <a href="ticket.html" class="px-3 hover:underline">Tickets</a>
+    </div>
+  </nav>
+
+  <!-- Matches List -->
+  <section class="max-w-4xl mx-auto mt-10 p-4">
+    <h2 class="text-3xl font-bold text-blue-700 mb-4 text-center">Upcoming Matches</h2>
+    <div id="match-list" class="grid gap-4 sm:grid-cols-2 md:grid-cols-3"></div>
+  </section>
+
+  <script>
+    const matches = [
+      { team1: "India", team2: "Australia", date: "2025-11-10", venue: "Mumbai Stadium" },
+      { team1: "England", team2: "Pakistan", date: "2025-11-12", venue: "Lords, London" },
+      { team1: "Brazil", team2: "Argentina", date: "2025-11-15", venue: "Maracanã Stadium" }
+    ];
+
+    const container = document.getElementById("match-list");
+    matches.forEach(match => {
+      const card = document.createElement("div");
+      card.className = "bg-white p-4 shadow-md rounded-lg text-center border border-gray-200";
+      card.innerHTML = `
+        <h3 class="text-xl font-bold text-blue-700">${match.team1} vs ${match.team2}</h3>
+        <p class="text-gray-600 mt-1">📅 ${match.date}</p>
+        <p class="text-gray-600">📍 ${match.venue}</p>
+        <a href="ticket.html" class="mt-3 inline-block bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">Book Ticket</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
